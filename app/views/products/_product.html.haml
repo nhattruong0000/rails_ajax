@@ -3,4 +3,4 @@
     %td= product.price
     %td= link_to 'Show', product
     %td= link_to 'Edit', edit_product_path(product)
-    %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+    %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?', "disable-with": "Deleting..." },remote: true, class: 'destroy-product'

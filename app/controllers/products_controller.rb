@@ -25,16 +25,17 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    # sleep(5)
     @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
+        # format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        # format.json { render :show, status: :created, location: @product }
         format.js {}
       else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        # format.html { render :new }
+        # format.json { render json: @product.errors, status: :unprocessable_entity }
         format.js {}
       end
     end
@@ -57,9 +58,11 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    # sleep(5)
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
+      format.js { render layout: false }
       format.json { head :no_content }
     end
   end
